@@ -69,7 +69,7 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
+<section class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
       <p><a href="#">PHP</a></p>
@@ -86,7 +86,11 @@
       
     </div>
   </div>
-</div>
+</section>
+
+<?php
+  require_once("comentarios.php");
+?>
 
 <footer class="container-fluid text-center">
  

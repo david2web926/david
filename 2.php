@@ -91,6 +91,10 @@
   </div>
 </div>
 
+<?php
+  require_once("comentarios.php");
+?>
+
 <footer class="container-fluid text-center">
 
 </footer>
