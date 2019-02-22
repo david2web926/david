@@ -26,6 +26,31 @@
       background-color: #f1f1f1;
       height: 100%;
     }
+
+    .comentario{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .comentario > form {
+      width: 45%;
+    }
+
+    .logComentarios{
+      border:1px solid black;
+      width: 50%;
+      margin-top: 5px;
+      margin-bottom: 2px;
+    }
+
+    #cajaComentarios{
+      display: flex;
+      flex-flow: column wrap;
+      align-content: center;
+      text-align: center;
+    }
     
     /* Set black background color, white text and some padding */
     footer {
@@ -59,8 +84,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Inicio</a></li>
-        <li><a href="1.php">PHP</a></li>
-        <li><a href="#">Javascript</a></li>
+        <li><a href="1.php?ctl=php">PHP</a></li>
+        <li><a href="2.php?ctl=js">Javascript</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
@@ -71,8 +96,8 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="1.php">PHP</a></p>
-      <p><a href="#">Javascript</a></p>
+      <p><a href="1.php?ctl=php">PHP</a></p>
+      <p><a href="2.php?ctl=js">Javascript</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Javascript</h1>
@@ -92,7 +117,7 @@
 </div>
 
 <?php
-  require_once("comentarios.php");
+  require_once("vista/comentarios.php");
 ?>
 
 <footer class="container-fluid text-center">

@@ -1,6 +1,6 @@
 <?php
 
-class Conexion {
+class Comentario {
     private $conexion;
     
     function __construct($host,$user,$pass,$db){
@@ -9,7 +9,7 @@ class Conexion {
 
 
     function getComentarios($pagina){
-        $sql = "SELECT * FROM comentarios WHERE tipoPagina = ? ORDER BY fecha";
+        $sql = "SELECT * FROM comentario WHERE tipoPagina = ? ORDER BY fecha";
         $stmt = $this->conexion->prepare($sql);
 
         $stmt->bind_param('s',$pagina);
@@ -19,7 +19,7 @@ class Conexion {
         $resultado = $stmt->get_result();
 
         while($filas = $resultado->fetch_assoc()){
-            arraypush($comentarios,$filas);
+            array_push($comentarios,$filas);
         }
         
         $stmt->close();
@@ -28,10 +28,10 @@ class Conexion {
     }
 
     function insertarComentario($nombre,$comentario,$pagina){
-        $sql = "INSERT INTO(nombre,comentario,pagina) VALUES(?, ?, ?)";
+        $sql = "INSERT INTO comentario (nombre,coment,tipoPagina) VALUES (?, ?, ?)";
         $stmt = $this->conexion->prepare($sql);
 
-        $stmt>bind_param('sss',$nombre,$comentario,$pagina);
+        $stmt->bind_param("sss",$nombre,$comentario,$pagina);
         $stmt->execute();
 
         $stmt->close();
